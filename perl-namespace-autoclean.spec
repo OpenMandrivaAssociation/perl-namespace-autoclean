@@ -1,6 +1,6 @@
 %define module   namespace-autoclean
-%define version    0.05
-%define release    %mkrel 2
+%define version    0.06
+%define release    %mkrel 1
 
 Name:       perl-%{module}
 Version:    %{version}
