@@ -1,20 +1,21 @@
-%define module   namespace-autoclean
-%define version    0.06
-%define release    %mkrel 1
+%define upstream_name    namespace-autoclean
+%define upstream_version 0.07
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    No summary found
-Url:        http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/namespace/%{module}-%{version}.tar.gz
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/namespace/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(B::Hooks::EndOfScope)
 BuildRequires: perl(Class::MOP)
 BuildRequires: perl(namespace::clean)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 When you import a function into a Perl package, it will naturally also be
@@ -31,7 +32,7 @@ imported functions, no matter if you imported them before or after you
 according to 'Class::MOP::Class::get_method_list'.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -52,5 +53,4 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
