@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    %mkrel 2
 
 License:    GPL+ or Artistic
 Group:      Development/Perl
@@ -16,6 +16,7 @@ BuildRequires: perl(Class::MOP)
 BuildRequires: perl(namespace::clean)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
+Provides: perl(namespace::autoclean)
 
 %description
 When you import a function into a Perl package, it will naturally also be
