@@ -1,22 +1,23 @@
 %define upstream_name    namespace-autoclean
-%define upstream_version 0.07
+%define upstream_version 0.08
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 1
+
+Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Summary:    No summary found
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/namespace/%{upstream_name}-%{upstream_version}.tar.gz
 
-Requires: perl(namespace::clean)
-Provides: perl(namespace::autoclean)
 BuildRequires: perl(B::Hooks::EndOfScope)
 BuildRequires: perl(Class::MOP)
 BuildRequires: perl(namespace::clean)
 BuildArch: noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
+Requires: perl(namespace::clean)
+Provides: perl(namespace::autoclean)
 
 %description
 When you import a function into a Perl package, it will naturally also be
