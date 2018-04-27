@@ -1,9 +1,9 @@
 %define upstream_name    namespace-autoclean
-%define upstream_version 0.14
+%define upstream_version 0.28
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    3
+Release:    1
 
 Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
@@ -48,6 +48,6 @@ according to 'Class::MOP::Class::get_method_list'.
 %makeinstall_std
 
 %files
-%doc Changes LICENSE README
+%doc Changes README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
