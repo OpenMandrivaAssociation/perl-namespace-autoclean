@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    1
+Release:    2
 
 Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
@@ -17,6 +17,7 @@ BuildRequires: perl(namespace::clean)
 BuildRequires: perl-devel
 BuildArch: noarch
 Requires: perl(namespace::clean)
+Requires:       perl(Sub::Identify)
 Provides: perl(namespace::autoclean)
 
 %description
