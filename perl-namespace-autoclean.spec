@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    3
+Release:    4
 
 Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
@@ -39,14 +39,14 @@ according to 'Class::MOP::Class::get_method_list'.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 # B::Hooks::EndOfScope >= 0.12 required for tests to pass...
 # %check
 # make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes README
