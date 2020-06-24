@@ -1,14 +1,14 @@
 %define upstream_name    namespace-autoclean
-%define upstream_version 0.28
+%define upstream_version 0.29
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    4
+Release:    1
 
 Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
 Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
+Url:        https://metacpan.org/release/namespace-autoclean
 Source0:    http://www.cpan.org/modules/by-module/namespace/namespace-autoclean-%{upstream_version}.tar.gz
 
 BuildRequires: perl(B::Hooks::EndOfScope)
