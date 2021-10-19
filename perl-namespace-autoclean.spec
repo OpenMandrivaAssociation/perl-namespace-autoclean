@@ -35,10 +35,10 @@ imported functions, no matter if you imported them before or after you
 according to 'Class::MOP::Class::get_method_list'.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%autosetup -p1 -n %{upstream_name}-%{upstream_version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make_build
 
 # B::Hooks::EndOfScope >= 0.12 required for tests to pass...
@@ -50,5 +50,5 @@ according to 'Class::MOP::Class::get_method_list'.
 
 %files
 %doc Changes README
-%{_mandir}/man3/*
+%doc %{_mandir}/man3/*
 %{perl_vendorlib}/*
