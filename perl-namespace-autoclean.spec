@@ -1,15 +1,14 @@
 %define upstream_name    namespace-autoclean
-%define upstream_version 0.29
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    2
+Version:    0.31
+Release:    1
 
 Summary:    Keep imports out of your namespace 
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://metacpan.org/release/namespace-autoclean
-Source0:    http://www.cpan.org/modules/by-module/namespace/namespace-autoclean-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/namespace/namespace-autoclean-%{version}.tar.gz
 
 BuildRequires: perl(B::Hooks::EndOfScope)
 BuildRequires: perl(Class::MOP)
@@ -35,7 +34,7 @@ imported functions, no matter if you imported them before or after you
 according to 'Class::MOP::Class::get_method_list'.
 
 %prep
-%autosetup -p1 -n %{upstream_name}-%{upstream_version} 
+%autosetup -p1 -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
