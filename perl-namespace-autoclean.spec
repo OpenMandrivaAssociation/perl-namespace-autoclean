@@ -10,6 +10,7 @@ Group:      Development/Perl
 Url:        https://metacpan.org/release/namespace-autoclean
 Source0:    http://www.cpan.org/modules/by-module/namespace/namespace-autoclean-%{version}.tar.gz
 
+BuildRequires:	make
 BuildRequires: perl(B::Hooks::EndOfScope)
 BuildRequires: perl(Class::MOP)
 BuildRequires: perl(namespace::clean)
